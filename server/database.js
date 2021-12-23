@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 (async()=>{
- const db = await  mongoose.connect('mongodb://68.183.16.45/inmobiliaria', {
+ const db = await  mongoose.connect('mongodb://localhost/inmobiliaria', {
     useNewUrlParser: true,
     useUnifiedTopology:true
 })

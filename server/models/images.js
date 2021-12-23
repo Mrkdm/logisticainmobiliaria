@@ -7,7 +7,7 @@ const ImageSchema =new Schema({
     typeOperation:String,
     rooms: String,
     bathRooms:String,
-    halfRooms: String,
+    halfBathRooms: String,
     parking: String,
     key: Array,
     status: String,
