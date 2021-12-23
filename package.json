@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node build/index.js",
-    "dev": "nodemon server/index.js --exec babel-node"
+    "dev": "nodemon --delay 300ms server/index.js --exec babel-node",
+    "build": "babel server/ --out-dir build",
+    "pm2": "pm2 start build/index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,22 +15,25 @@
   "dependencies": {
     "aws-sdk": "^2.995.0",
     "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
     "get-stream": "^6.0.1",
     "mongoose": "^6.0.7",
     "multer": "^1.4.3",
+    "nodemailer": "^6.7.0",
+    "nodemailer-smtp-transport": "^2.7.4",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.5",
-    "@babel/node": "^7.15.4",
-    "@babel/plugin-transform-runtime": "^7.15.0",
-    "@babel/preset-env": "^7.15.6",
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-cli": "^6.26.0",
+    "dotenv": "^10.0.0",
     "ncp": "^2.0.0",
-    "nodemon": "^2.0.12",
+    "nodemon": "^2.0.14",
     "rimraf": "^3.0.2"
   }
 }

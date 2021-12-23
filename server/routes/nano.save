@@ -1,0 +1,40 @@
+  GNU nano 4.8                                                               messages.routes.js                                                                         import { Router } from "express";
+import Client from '../models/client.js'
+const router = Router();
+
+
+router.post('/api/message/', async(req,res)=>{
+        const {email} = req.body
+        const {name} = req.body
+        const {lastname} = req.body
+        const {phoneNumber} = req.body
+        try{
+        const client =  new Client({
+        name:name,
+        lastname:lastname,
+        email:email,
+        phoneNumber:phoneNumber
+
+        })
+        res.json('Enviado correctamente')
+        console.log(client)
+        }
+        catch(error){
+        console.log(error)
+        res.json(error)
+        }
+})
+
+router.get('/api/message/', async(req,res)=>{
+const messages = await Client.find();
+return res.json(messages)
+
+})
+router.get('/api/message/:id',async(req,res)=>{
+const message = await Client.findById(req.params.id);
+return res.json(image);
+
+})
+
+export default router;
+
